@@ -1,0 +1,24 @@
+:root {
+  /* Greens */
+  --green-primary: #13ec92;
+  --green-primary-alpha: #13ec9228;
+  --green-bg-dark: #10221a;
+  --green-bg-medium: #287a57;
+  --green-bg-light: #b1d9c8;
+  --green-bg-dark-alpha: #1c362b;
+
+  /* Neutrals */
+  --white-soft: #f6f8f7;
+  --gray-bg-light: #8a9394;
+
+  /* slate */
+  --bg-slate-700: #314158;
+  --bg-slate-900: #1d293d;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  min-width: 319px;
+  margin: 0 auto;
+}

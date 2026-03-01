@@ -1,0 +1,445 @@
+[
+  {
+    "id": 1,
+    "companyName": "NovaPay",
+    "positionName": "Senior Staff Software Engineer",
+    "contract": "Full-time",
+    "salary": 4200,
+    "area": "Engineering",
+    "location": "Medellín, Antioquia",
+    "technologies": [
+      "React",
+      "TypeScript",
+      "Node.js",
+      "AWS Lambda",
+      "PostgreSQL",
+      "GraphQL"
+    ],
+    "isRemote": true,
+    "posted": "Posted 2 days ago",
+    "experienceLevel": "Senior",
+    "aboutTheRole": "You will lead complex frontend and backend initiatives, working closely with product and design teams.",
+    "requirements": [
+      "3+ years of experience with React and TypeScript",
+      "Deep understanding of distributed systems",
+      "Experience with AWS services and CI/CD pipelines",
+      "Strong communication and mentoring skills"
+    ],
+    "responsibilities": [
+      "Design scalable software solutions",
+      "Review code and mentor junior developers",
+      "Collaborate with cross-functional teams"
+    ],
+    "aboutTheCompany": "A fast-growing fintech company focused on building scalable financial platforms."
+  },
+  {
+    "id": 2,
+    "companyName": "Pixel Agency",
+    "positionName": "Junior Frontend Developer",
+    "contract": "Full-time",
+    "salary": 1800,
+    "area": "Frontend",
+    "location": "Bogotá, Colombia",
+    "technologies": ["HTML", "CSS", "JavaScript", "React"],
+    "isRemote": false,
+    "posted": "Posted 1 day ago",
+    "experienceLevel": "Junior",
+    "aboutTheRole": "Ideal role for developers starting their career in web development.",
+    "requirements": [
+      "Basic knowledge of JavaScript",
+      "Familiarity with React",
+      "Understanding of responsive design"
+    ],
+    "responsibilities": [
+      "Implement UI components",
+      "Fix frontend bugs",
+      "Collaborate with designers"
+    ],
+    "aboutTheCompany": "Digital agency working with multiple international clients."
+  },
+  {
+    "id": 3,
+    "companyName": "LogiChain",
+    "positionName": "Backend Developer",
+    "contract": "Full-time",
+    "salary": 3000,
+    "area": "Backend",
+    "location": "Remote",
+    "technologies": ["Node.js", "Express", "MongoDB", "Docker"],
+    "isRemote": true,
+    "posted": "Posted 5 days ago",
+    "experienceLevel": "Mid",
+    "aboutTheRole": "Responsible for building and maintaining REST APIs.",
+    "requirements": [
+      "2+ years with Node.js",
+      "Experience with NoSQL databases",
+      "Knowledge of Docker"
+    ],
+    "responsibilities": [
+      "Develop APIs",
+      "Optimize database queries",
+      "Write unit tests"
+    ],
+    "aboutTheCompany": "Startup focused on logistics and supply chain solutions."
+  },
+  {
+    "id": 4,
+    "companyName": "HealthApp Labs",
+    "positionName": "Mobile Developer (React Native)",
+    "contract": "Contract",
+    "salary": 3500,
+    "area": "Mobile",
+    "location": "México City, México",
+    "technologies": ["React Native", "TypeScript", "Firebase"],
+    "isRemote": true,
+    "posted": "Posted 3 days ago",
+    "experienceLevel": "Mid",
+    "aboutTheRole": "Build and maintain cross-platform mobile applications.",
+    "requirements": [
+      "Experience with React Native",
+      "Knowledge of mobile app deployment"
+    ],
+    "responsibilities": ["Develop mobile features", "Fix performance issues"],
+    "aboutTheCompany": "Health-tech company creating mobile solutions for clinics."
+  },
+  {
+    "id": 5,
+    "companyName": "CloudBridge",
+    "positionName": "DevOps Engineer",
+    "contract": "Full-time",
+    "salary": 4000,
+    "area": "DevOps",
+    "location": "Santiago, Chile",
+    "technologies": ["AWS", "Terraform", "Docker", "Kubernetes"],
+    "isRemote": false,
+    "posted": "Posted 1 week ago",
+    "experienceLevel": "Senior",
+    "aboutTheRole": "Manage cloud infrastructure and deployment pipelines.",
+    "requirements": [
+      "Strong AWS experience",
+      "Infrastructure as Code knowledge"
+    ],
+    "responsibilities": [
+      "Maintain CI/CD pipelines",
+      "Ensure system reliability"
+    ],
+    "aboutTheCompany": "Enterprise software company with regional presence."
+  },
+  {
+    "id": 6,
+    "companyName": "TestifyHQ",
+    "positionName": "QA Automation Engineer",
+    "contract": "Full-time",
+    "salary": 2600,
+    "area": "Quality Assurance",
+    "location": "Remote",
+    "technologies": ["Cypress", "Jest", "JavaScript"],
+    "isRemote": true,
+    "posted": "Posted 4 days ago",
+    "experienceLevel": "Mid",
+    "aboutTheRole": "Ensure product quality through automated testing.",
+    "requirements": [
+      "Experience with automated testing tools",
+      "Attention to detail"
+    ],
+    "responsibilities": ["Write automated tests", "Report bugs"],
+    "aboutTheCompany": "SaaS company building productivity tools."
+  },
+  {
+    "id": 7,
+    "companyName": "BrightStudio",
+    "positionName": "UI/UX Designer",
+    "contract": "Full-time",
+    "salary": 2400,
+    "area": "Design",
+    "location": "Buenos Aires, Argentina",
+    "technologies": ["Figma", "Adobe XD"],
+    "isRemote": false,
+    "posted": "Posted 6 days ago",
+    "experienceLevel": "Mid",
+    "aboutTheRole": "Design intuitive interfaces for web applications.",
+    "requirements": [
+      "Portfolio of UI/UX projects",
+      "User-centered design knowledge"
+    ],
+    "responsibilities": ["Create wireframes", "Collaborate with developers"],
+    "aboutTheCompany": "Creative studio working with startups."
+  },
+  {
+    "id": 8,
+    "companyName": "DataPulse",
+    "positionName": "Data Analyst",
+    "contract": "Full-time",
+    "salary": 3200,
+    "area": "Data",
+    "location": "Remote",
+    "technologies": ["Python", "SQL", "Power BI"],
+    "isRemote": true,
+    "posted": "Posted 2 weeks ago",
+    "experienceLevel": "Mid",
+    "aboutTheRole": "Analyze and visualize data to support business decisions.",
+    "requirements": ["Strong SQL skills", "Experience with data visualization"],
+    "responsibilities": ["Build dashboards", "Analyze datasets"],
+    "aboutTheCompany": "E-commerce company with global reach."
+  },
+  {
+    "id": 9,
+    "companyName": "Productify",
+    "positionName": "Product Manager",
+    "contract": "Full-time",
+    "salary": 3800,
+    "area": "Product",
+    "location": "Madrid, Spain",
+    "technologies": ["Jira", "Confluence"],
+    "isRemote": false,
+    "posted": "Posted 3 days ago",
+    "experienceLevel": "Senior",
+    "aboutTheRole": "Lead product strategy and roadmap definition.",
+    "requirements": [
+      "Experience managing digital products",
+      "Strong communication skills"
+    ],
+    "responsibilities": ["Define product roadmap", "Work with stakeholders"],
+    "aboutTheCompany": "International software consultancy."
+  },
+  {
+    "id": 10,
+    "companyName": "StackFlow",
+    "positionName": "Full Stack Developer",
+    "contract": "Full-time",
+    "salary": 3400,
+    "area": "Engineering",
+    "location": "Remote",
+    "technologies": ["React", "Node.js", "MySQL"],
+    "isRemote": true,
+    "posted": "Posted yesterday",
+    "experienceLevel": "Mid",
+    "aboutTheRole": "Work across frontend and backend to deliver complete features.",
+    "requirements": [
+      "Experience with React and Node.js",
+      "Understanding of relational databases"
+    ],
+    "responsibilities": [
+      "Develop end-to-end features",
+      "Participate in code reviews"
+    ],
+    "aboutTheCompany": "Startup building SaaS solutions for small businesses."
+  },
+  {
+    "id": 11,
+    "companyName": "Google",
+    "positionName": "Full Stack Developer",
+    "contract": "Freelance",
+    "salary": 4400,
+    "area": "Engineering",
+    "location": "Mountain View",
+    "technologies": ["Angular", "Docker", "MySQL"],
+    "isRemote": true,
+    "posted": "Posted yesterday",
+    "experienceLevel": "Mid",
+    "aboutTheRole": "Work across frontend and backend to deliver complete features.",
+    "requirements": [
+      "Experience with Angular and Docker",
+      "Understanding of relational databases"
+    ],
+    "responsibilities": [
+      "Develop end-to-end features",
+      "Participate in code reviews"
+    ],
+    "aboutTheCompany": "American multinational technology company, a subsidiary of Alphabet Inc., specializing in internet services, software, electronic devices and artificial intelligence"
+  },
+  {
+    "id": 12,
+    "companyName": "Microsoft",
+    "positionName": "Frontend Developer",
+    "contract": "Full-time",
+    "salary": 5200,
+    "area": "Engineering",
+    "location": "Redmond",
+    "technologies": ["React", "TypeScript", "Azure"],
+    "isRemote": true,
+    "posted": "Posted 2 days ago",
+    "experienceLevel": "Senior",
+    "aboutTheRole": "Focus on building scalable UI components.",
+    "requirements": [
+      "Strong knowledge of React",
+      "Experience with cloud services"
+    ],
+    "responsibilities": [
+      "Design reusable components",
+      "Collaborate with UX team"
+    ],
+    "aboutTheCompany": "Leading multinational technology company specializing in software, hardware, and cloud services."
+  },
+  {
+    "id": 13,
+    "companyName": "Amazon",
+    "positionName": "Backend Engineer",
+    "contract": "Full-time",
+    "salary": 6000,
+    "area": "Engineering",
+    "location": "Seattle",
+    "technologies": ["Java", "AWS", "PostgreSQL"],
+    "isRemote": false,
+    "posted": "Posted last week",
+    "experienceLevel": "Mid",
+    "aboutTheRole": "Develop and maintain backend services for e-commerce.",
+    "requirements": [
+      "Experience with Java and AWS",
+      "Knowledge of distributed systems"
+    ],
+    "responsibilities": ["Implement APIs", "Optimize database queries"],
+    "aboutTheCompany": "Global e-commerce and cloud computing giant."
+  },
+  {
+    "id": 14,
+    "companyName": "Netflix",
+    "positionName": "Data Engineer",
+    "contract": "Contract",
+    "salary": 4800,
+    "area": "Data",
+    "location": "Los Gatos",
+    "technologies": ["Python", "Spark", "Kafka"],
+    "isRemote": true,
+    "posted": "Posted yesterday",
+    "experienceLevel": "Junior",
+    "aboutTheRole": "Support data pipelines for content analytics.",
+    "requirements": ["Basic knowledge of Python", "Interest in big data tools"],
+    "responsibilities": ["Maintain ETL processes", "Assist in data cleaning"],
+    "aboutTheCompany": "Entertainment company providing streaming services worldwide."
+  },
+  {
+    "id": 15,
+    "companyName": "Google",
+    "positionName": "Cloud Architect",
+    "contract": "Full-time",
+    "salary": 7500,
+    "area": "Cloud",
+    "location": "Mountain View",
+    "technologies": ["GCP", "Kubernetes", "Terraform"],
+    "isRemote": false,
+    "posted": "Posted 3 days ago",
+    "experienceLevel": "Senior",
+    "aboutTheRole": "Design and oversee cloud infrastructure solutions.",
+    "requirements": ["Expertise in GCP", "Experience with IaC tools"],
+    "responsibilities": [
+      "Architect scalable systems",
+      "Guide engineering teams"
+    ],
+    "aboutTheCompany": "Subsidiary of Alphabet Inc., specializing in internet services and cloud computing."
+  },
+  {
+    "id": 16,
+    "companyName": "Spotify",
+    "positionName": "Machine Learning Engineer",
+    "contract": "Internship",
+    "salary": 2000,
+    "area": "AI",
+    "location": "Stockholm",
+    "technologies": ["Python", "TensorFlow", "PyTorch"],
+    "isRemote": true,
+    "posted": "Posted 5 days ago",
+    "experienceLevel": "Intern",
+    "aboutTheRole": "Assist in building recommendation systems.",
+    "requirements": ["Basic ML knowledge", "Strong Python skills"],
+    "responsibilities": [
+      "Support ML model training",
+      "Evaluate model performance"
+    ],
+    "aboutTheCompany": "Music streaming company with global reach."
+  },
+  {
+    "id": 17,
+    "companyName": "Meta",
+    "positionName": "DevOps Engineer",
+    "contract": "Full-time",
+    "salary": 5800,
+    "area": "Infrastructure",
+    "location": "Menlo Park",
+    "technologies": ["Docker", "Kubernetes", "CI/CD"],
+    "isRemote": false,
+    "posted": "Posted yesterday",
+    "experienceLevel": "Mid",
+    "aboutTheRole": "Maintain deployment pipelines and infrastructure.",
+    "requirements": [
+      "Experience with containerization",
+      "Knowledge of CI/CD tools"
+    ],
+    "responsibilities": ["Automate deployments", "Monitor system health"],
+    "aboutTheCompany": "Social media and technology company focused on virtual reality and connectivity."
+  },
+  {
+    "id": 18,
+    "companyName": "Tesla",
+    "positionName": "Embedded Systems Engineer",
+    "contract": "Full-time",
+    "salary": 6700,
+    "area": "Engineering",
+    "location": "Palo Alto",
+    "technologies": ["C++", "RTOS", "CAN Bus"],
+    "isRemote": false,
+    "posted": "Posted last month",
+    "experienceLevel": "Senior",
+    "aboutTheRole": "Develop embedded software for electric vehicles.",
+    "requirements": ["Strong C++ skills", "Experience with automotive systems"],
+    "responsibilities": [
+      "Design embedded modules",
+      "Test and validate systems"
+    ],
+    "aboutTheCompany": "Automotive and energy company specializing in electric vehicles."
+  },
+  {
+    "id": 19,
+    "companyName": "IBM",
+    "positionName": "AI Researcher",
+    "contract": "Contract",
+    "salary": 5500,
+    "area": "Research",
+    "location": "New York",
+    "technologies": ["Python", "NLP", "Deep Learning"],
+    "isRemote": true,
+    "posted": "Posted yesterday",
+    "experienceLevel": "Mid",
+    "aboutTheRole": "Conduct research in natural language processing.",
+    "requirements": ["Experience with NLP models", "Strong analytical skills"],
+    "responsibilities": [
+      "Publish research papers",
+      "Collaborate with academic partners"
+    ],
+    "aboutTheCompany": "Multinational technology corporation with focus on AI and enterprise solutions."
+  },
+  {
+    "id": 20,
+    "companyName": "Oracle",
+    "positionName": "Database Administrator",
+    "contract": "Full-time",
+    "salary": 5000,
+    "area": "Data",
+    "location": "Austin",
+    "technologies": ["Oracle DB", "SQL", "PL/SQL"],
+    "isRemote": false,
+    "posted": "Posted 2 weeks ago",
+    "experienceLevel": "Mid",
+    "aboutTheRole": "Manage and optimize enterprise databases.",
+    "requirements": ["Experience with Oracle DB", "Strong SQL knowledge"],
+    "responsibilities": ["Ensure database security", "Optimize queries"],
+    "aboutTheCompany": "Enterprise software company specializing in database management systems."
+  },
+  {
+    "id": 21,
+    "companyName": "Google",
+    "positionName": "UX Designer",
+    "contract": "Freelance",
+    "salary": 4200,
+    "area": "Design",
+    "location": "Mountain View",
+    "technologies": ["Figma", "Sketch", "CSS"],
+    "isRemote": true,
+    "posted": "Posted yesterday",
+    "experienceLevel": "Junior",
+    "aboutTheRole": "Design user interfaces for web applications.",
+    "requirements": ["Experience with design tools", "Basic CSS knowledge"],
+    "responsibilities": ["Create wireframes", "Collaborate with developers"],
+    "aboutTheCompany": "Subsidiary of Alphabet Inc., specializing in internet services and design innovation."
+  }
+]

@@ -1,0 +1,68 @@
+@import "../../styles/utils.css";
+
+/**Hero*/
+.hero {
+  height: calc(100dvh - 65px);
+  background-image:
+    linear-gradient(#10221abb, #10221abb), url("./images/hero-image.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.hero__container {
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  grid-template-rows: 35px 214px;
+  gap: 0.4rem;
+  height: 100%;
+}
+.hero__note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 235px;
+  height: 35px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--green-primary);
+  background-color: #1d3b2e;
+  border-radius: 20px;
+  border: 1px solid var(--green-bg-medium);
+}
+.hero__circle {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--green-primary);
+  box-shadow: 0 0 3px 3px var(--green-bg-medium);
+}
+.hero__texts {
+  display: grid;
+  justify-items: center;
+  gap: 1rem;
+}
+.hero__title {
+  max-width: 320px;
+  font-size: 2.8rem;
+  text-align: center;
+}
+
+.hero__title span {
+  color: var(--green-primary);
+}
+
+.hero__description {
+  max-width: 400px;
+  text-align: center;
+  line-height: 26px;
+  color: var(--white-soft);
+}
+
+@media (min-width: 930px) {
+  /*Hero*/
+  .hero__title {
+    font-size: 3.2rem;
+  }
+}

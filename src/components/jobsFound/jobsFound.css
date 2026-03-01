@@ -1,0 +1,63 @@
+@import "../../styles/utils.css";
+
+/*Jobs*/
+.jobs {
+  margin-top: 2.5rem;
+}
+.jobs__texts {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+.jobs__texts h2 {
+  font-size: 1rem;
+}
+.jobs__recent {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.jobs__recent p {
+  color: var(--green-primary);
+  font-weight: 700;
+}
+.jobs__recent svg {
+  transform: rotate(90deg);
+}
+/*Container founds*/
+.jobs__founds {
+  display: grid;
+  justify-items: center;
+  gap: 1.15rem;
+  padding-top: 2rem;
+}
+.text_notFound {
+  text-align: center;
+}
+
+.jobs__txtMore {
+  font-size: 1.2rem;
+  color: var(--green-bg-medium);
+
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    color: var(--green-primary);
+    cursor: pointer;
+  }
+}
+
+@media (min-width: 870px) {
+  /*Container founds*/
+  .jobs__founds {
+    grid-template-columns: repeat(2, 395px);
+    justify-content: center;
+  }
+}
+
+@media (min-width: 1245px) {
+  /*Container founds*/
+  .jobs__founds {
+    grid-template-columns: repeat(3, 395px);
+  }
+}

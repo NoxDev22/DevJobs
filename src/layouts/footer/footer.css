@@ -1,0 +1,109 @@
+@import "../../styles/utils.css";
+
+/*Footer*/
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 130px;
+  margin-top: 2.2rem;
+  padding-block: 1.6rem;
+  border-top: 1px solid var(--bg-slate-900);
+}
+.footer .footer__nav {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
+.footer .footer__nav li {
+  display: grid;
+  justify-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: var(--gray-bg-light);
+  text-transform: uppercase;
+}
+.footer__links {
+  width: 100%;
+  margin-top: 1.6rem;
+  border-top: 1px solid var(--bg-slate-900);
+}
+.footer__contentList {
+  display: flex;
+  gap: 3rem;
+  padding-block: 1.3rem;
+}
+.footer__contentList ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  justify-items: start;
+  list-style: none;
+}
+.footer__contentList ul li:first-child {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding-bottom: 13px;
+}
+.footer__contentList ul li a {
+  height: fit-content;
+  color: var(--gray-bg-light);
+  transition: color 0.2s ease-in-out;
+}
+.footer__contentList ul li:not(:first-child):hover > a {
+  color: var(--green-primary);
+}
+.footer__icons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding-top: 1.6rem;
+  border-top: 1px solid var(--bg-slate-900);
+}
+
+.footer__icons span {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--gray-bg-light);
+}
+
+.footer__icons span svg {
+  padding: 4px 8px;
+  border-radius: 4px;
+  background-color: var(--bg-slate-900);
+}
+.footer__icons span h3 {
+  font-size: 1rem;
+}
+.footer__icons ul {
+  display: flex;
+  gap: 1.3rem;
+  list-style: none;
+}
+
+@media (min-width: 930px) {
+  /*Footer*/
+  .footer {
+    padding-block: 0;
+    border-top: none;
+  }
+  .footer .footer__nav {
+    display: none;
+  }
+  .footer__contentList {
+    justify-content: center;
+  }
+  .footer__links {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    margin-top: 1.5rem;
+  }
+  .footer__icons {
+    padding-top: 0;
+    border-top: none;
+  }
+}

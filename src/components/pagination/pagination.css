@@ -1,0 +1,62 @@
+@import "../../styles/utils.css";
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  padding-top: 2.5rem;
+}
+
+.pagination__number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.pagination__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  color: var(--green-primary);
+  border-radius: 4px;
+  background-color: transparent;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    font-weight: 600;
+    color: var(--green-bg-dark);
+    background-color: var(--green-primary);
+  }
+  &.pagination__link--active {
+    font-weight: 600;
+    color: var(--green-bg-dark);
+    background-color: var(--green-primary);
+  }
+}
+
+.pagination__arrow {
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border-radius: 4px;
+  border: none;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    cursor: pointer;
+    background-color: var(--green-primary);
+  }
+
+  &:hover > svg > path {
+    fill: var(--green-bg-dark);
+  }
+
+  &.pagination__arrow--limit {
+    opacity: 0.6;
+    pointer-events: none;
+  }
+}

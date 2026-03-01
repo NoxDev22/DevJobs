@@ -1,0 +1,25 @@
+@import "../../styles/utils.css";
+
+.search__selectedFilter {
+  justify-self: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  width: 135px;
+  height: 44px;
+  font-size: 0.87rem;
+  background: var(--green-bg-dark-alpha);
+  border-radius: 25px;
+  border: 1px solid var(--green-bg-medium);
+}
+.search__selectedFilter input {
+  position: absolute;
+  top: 10px;
+  z-index: -1;
+}
+.search__selectedFilter svg {
+  width: 20px;
+  height: 20px;
+}

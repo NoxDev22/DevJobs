@@ -1,0 +1,210 @@
+@import "../../styles/utils.css";
+
+/*Sección de formulario del filtro*/
+.search__formFilter {
+  display: none;
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+  padding-block: 1.1rem;
+  padding-inline: 1.5rem;
+  background-color: var(--green-bg-dark-alpha);
+  border-radius: 1rem;
+
+  &.search__formFilter--active {
+    display: block;
+  }
+}
+.search__formFilter h2 {
+  padding-bottom: 6px;
+}
+.search__formFilter h2 > span {
+  color: var(--green-primary);
+}
+.search__formFilter p {
+  color: var(--gray-bg-light);
+}
+.search__formFilterOptions {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas:
+    "location location"
+    "tech tech"
+    "contract salary"
+    "area remote";
+  gap: 13px;
+  margin-top: 1rem;
+}
+.labelFilter {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.labelFilter input {
+  order: 2;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 37px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: inherit;
+  padding-inline: 40px;
+  background-color: var(--green-bg-dark);
+  border-radius: 6px;
+  border: 1px solid var(--green-primary-alpha);
+  outline: none;
+  transition: border 0.2s ease-in-out;
+  &:focus {
+    border-color: var(--green-bg-medium);
+  }
+  &:focus + svg path {
+    fill: var(--green-primary);
+  }
+}
+.labelFilter svg path {
+  transition: fill 0.2s ease-in-out;
+}
+/*Select*/
+.select-wrapper {
+  position: relative;
+  height: 37px;
+}
+.select-wrapper::after {
+  content: "▾";
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #9ca3af;
+}
+.selectFilter {
+  width: 100%;
+  height: 100%;
+  font-size: 0.9rem;
+  font-family: inherit;
+  color: var(--gray-bg-light);
+  padding: 10px 14px;
+  border-radius: 6px;
+  border: 1px solid var(--green-primary-alpha);
+  background-color: var(--green-bg-dark);
+  appearance: none;
+  cursor: pointer;
+  outline: none;
+  transition: border 0.2s ease-in-out;
+  &:focus {
+    border-color: var(--green-bg-medium);
+  }
+}
+
+/*Remote filter*/
+.remoteFilter {
+  height: 37px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  padding-left: 38px;
+  padding-right: 14px;
+  background-color: var(--green-bg-dark);
+  border-radius: 6px;
+  border: 1px solid var(--green-primary-alpha);
+  &:hover {
+    cursor: pointer;
+  }
+}
+.remoteFilter svg {
+  position: absolute;
+  left: 9px;
+  top: calc(50% - 11px);
+  width: 22px;
+  height: 22px;
+}
+.remoteFilter svg path {
+  transition: fill 0.2s ease-in-out;
+}
+.remoteFilter .checkRemote {
+  position: absolute;
+  opacity: 0;
+  height: auto;
+  width: 10px;
+}
+.sliderButton {
+  display: flex;
+  align-items: center;
+  width: 45px;
+  height: 20px;
+  padding-inline: 4px;
+  background-color: var(--green-bg-medium);
+  border-radius: 20px;
+  transition: background-color 0.2s ease-in-out;
+}
+.sliderButton span {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--green-bg-light);
+  margin-left: 0;
+  transition: all 0.2s ease-in-out;
+}
+
+.remoteFilter .checkRemote:checked ~ .sliderButton {
+  background-color: var(--green-primary);
+}
+.remoteFilter .checkRemote:checked ~ .sliderButton span {
+  background-color: var(--white-soft);
+  margin-left: 25px;
+}
+.remoteFilter .checkRemote:checked ~ svg path {
+  fill: var(--green-primary);
+}
+/*Button apply filters*/
+.search__formFilterBtnApply {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 40px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--green-bg-dark);
+  margin-top: 1rem;
+  background-color: var(--green-primary);
+  border-radius: 7px;
+  border: none;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    cursor: pointer;
+    transform: scale(0.99);
+  }
+}
+.locationFilter {
+  position: relative;
+  grid-area: location;
+}
+.TechFilter {
+  position: relative;
+  grid-area: tech;
+}
+.contractFilter {
+  grid-area: contract;
+}
+.salaryFilter {
+  grid-area: salary;
+}
+.areaFilter {
+  grid-area: area;
+}
+.remoteFilter {
+  grid-area: remote;
+}
+.locationFilter svg,
+.TechFilter svg {
+  position: absolute;
+  left: 9px;
+  top: calc(50% - 11px);
+  width: 22px;
+  height: 22px;
+}

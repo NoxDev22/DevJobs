@@ -1,0 +1,124 @@
+@import "../../styles/utils.css";
+
+/*Card*/
+.jobs__card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 395px;
+  padding: 1rem;
+  background-color: var(--green-bg-dark-alpha);
+  border-radius: 17px;
+  border: 1px solid var(--green-bg-medium);
+}
+.jobs__header {
+  position: relative;
+  display: flex;
+  gap: 1.2rem;
+  padding-bottom: 10px;
+}
+
+.jobs__image {
+  width: 55px;
+  height: 55px;
+  object-fit: cover;
+}
+.jobs__level {
+  max-width: 255px;
+  font-size: 1.3rem;
+  padding-bottom: 2px;
+}
+.jobs__description {
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: var(--green-bg-light);
+}
+.jobs__iconSave {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    cursor: pointer;
+  }
+  &.jobs__iconSave--active > path {
+    fill: var(--green-primary);
+  }
+}
+.jobs__technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: 100%;
+  max-width: 330px;
+  margin-top: 14px;
+}
+.jobs__published {
+  margin-block: 15px;
+}
+.jobs__published h2 {
+  font-size: 0.91rem;
+  text-transform: uppercase;
+  color: var(--green-bg-light);
+  padding-bottom: 3px;
+}
+.jobs__published p {
+  font-size: 0.9rem;
+}
+.jobs__technologies p {
+  font-size: 0.9rem;
+  color: var(--green-primary);
+  padding: 4px 10px;
+  background-color: var(--green-bg-dark);
+  border-radius: 5px;
+}
+.jobs__footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: auto;
+}
+.jobs__footerInfo {
+  display: flex;
+  gap: 15px;
+}
+.jobs__footerInfo span {
+  text-align: center;
+}
+.jobs__footerH3 {
+  font-size: 0.91rem;
+  color: var(--green-bg-light);
+  text-transform: uppercase;
+  padding-bottom: 3px;
+}
+.jobs__footerInfo span p {
+  font-size: 0.9rem;
+}
+.jobs__button {
+  width: 140px;
+  height: 45px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--green-bg-dark);
+  background-color: var(--green-primary);
+  border-radius: 12px;
+  border: none;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(0.98);
+  }
+  &.jobs__button--active {
+    background-color: var(--green-bg-medium);
+  }
+}
+
+@media (min-width: 930px) {
+  /*Jobs*/
+  .jobs__texts h2 {
+    font-size: 1.2rem;
+  }
+  .jobs__recent p {
+    font-size: 1.1rem;
+  }
+}
