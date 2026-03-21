@@ -1,4 +1,8 @@
+import type React from "react";
 import "./filterOptions.css";
+
+//types
+//utils
 
 type Props = {
   iconLocation: React.ReactElement;
@@ -13,9 +17,22 @@ export function FilterOptions({
   iconRemote,
   isActive,
 }: Props) {
+  const handleFilteredJobs = (e: React.ChangeEvent<HTMLFormElement>) => {
+    const form = new window.FormData(e.currentTarget);
+    // setFilters({
+    //   location: form.get(idLocation)?.toString() ?? "",
+    //   tech: form.get(idTech)?.toString() ?? "",
+    //   contract: form.get(idContract)?.toString() ?? "",
+    //   area: form.get(idArea)?.toString() ?? "",
+    //   salary: form.get(idSalary)?.toString() ?? "",
+    //   remote: form.get(idRemote) === "on",
+    // });
+  };
+
   return (
     <form
       className={`search__formFilter ${isActive ? "search__formFilter--active" : ""}`}
+      onChange={handleFilteredJobs}
     >
       <h2>
         Find your next 10x <span>role</span>
@@ -83,7 +100,6 @@ export function FilterOptions({
           </div>
         </label>
       </div>
-      <button className="search__formFilterBtnApply">Apply Filters</button>
     </form>
   );
 }

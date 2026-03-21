@@ -1,0 +1,54 @@
+@import "../../styles/utils.css";
+
+.notFound {
+  display: grid;
+  place-content: center;
+  grid-template-rows: 250px 140px;
+  height: calc(100dvh - 65px);
+}
+
+.notFound_illustration {
+  width: 600px;
+  height: 250px;
+}
+
+.notFound_illustration_img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.notFound_texts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+.notFound_title {
+  font-size: 2.3rem;
+  font-weight: 400;
+}
+
+.notFound_description {
+  color: var(--gray-bg-light);
+}
+
+.notFound_btnBackToHome {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 200px;
+  height: 47px;
+  font-weight: 600;
+  color: var(--green-bg-dark);
+  background-color: var(--green-primary);
+  border-radius: 10px;
+  transition: transform 0.2s ease-in-out;
+
+  &:hover {
+    transform: scale(0.99);
+  }
+}

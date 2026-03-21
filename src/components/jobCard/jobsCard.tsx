@@ -1,26 +1,21 @@
 import "./jobsCard.css";
 //types
-import { type cardJobType } from "../types/types";
+import { type typeOfCard } from "../types/types";
 
 export function JobsCard({
-  companyName,
-  positionName,
-  contract,
-  salary,
-  location,
-  technologies,
-  isRemote,
-  posted,
-}: cardJobType) {
+  titulo,
+  empresa,
+  ubicacion,
+  descripcion,
+  data,
+}: typeOfCard) {
   return (
     <article className="jobs__card">
       <div className="jobs__header">
         <img src="./images/logo_default.jpg" alt="" className="jobs__image" />
         <span>
-          <h3 className="jobs__level">{positionName}</h3>
-          <p className="jobs__description">
-            {companyName} • {isRemote ? "Remote" : "In person"} • {location}
-          </p>
+          <h3 className="jobs__level">{titulo}</h3>
+          <p className="jobs__location">{empresa}</p>
         </span>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -35,26 +30,31 @@ export function JobsCard({
           />
         </svg>
       </div>
+      <div className="jobs__description">
+        <h2>Descripción</h2>
+        <p>{descripcion}</p>
+      </div>
       <div className="jobs__technologies">
-        {technologies.map((tech, i) => {
+        {data.technology.slice(0, 3).map((tech, i) => {
           return <p key={i}>{tech}</p>;
         })}
       </div>
-      <div className="jobs__published">
-        <h2>Published</h2>
-        <p>{posted}</p>
+      <div className="jobs__info">
+        <span>
+          <h3 className="jobs__infoH3">Nivel</h3>
+          <p>{data.nivel}</p>
+        </span>
+        <span>
+          <h3 className="jobs__infoH3">Ubicación</h3>
+          <p>{ubicacion}</p>
+        </span>
+        <span>
+          <h3 className="jobs__infoH3">Modalidad</h3>
+          <p>{data.modalidad}</p>
+        </span>
       </div>
-      <div className="jobs__footer">
-        <div className="jobs__footerInfo">
-          <span>
-            <h3 className="jobs__footerH3">Salary</h3>
-            <p>$ {salary}</p>
-          </span>
-          <span>
-            <h3 className="jobs__footerH3">Contract</h3>
-            <p>{contract}</p>
-          </span>
-        </div>
+      <div className="jobs_buttons">
+        <button className="jobs__button">More Info.</button>
         <button className="jobs__button">Apply Now</button>
       </div>
     </article>

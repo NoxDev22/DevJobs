@@ -1,0 +1,80 @@
+@import "../../styles/utils.css";
+
+.home {
+  display: grid;
+  justify-items: center;
+  gap: 2.5rem;
+  padding-top: 3.5rem;
+}
+
+.home_whyContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  max-width: 420px;
+}
+
+.home_whyDescription {
+  font-size: 0.97rem;
+  color: var(--gray-bg-light);
+  text-align: center;
+}
+
+.home_whyButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 200px;
+  height: 47px;
+  font-weight: 600;
+  color: var(--green-bg-dark);
+  background-color: var(--green-primary);
+  margin-top: 0.9rem;
+  border-radius: 10px;
+  transition: transform 0.2s ease-in-out;
+
+  &:hover {
+    transform: scale(0.99);
+  }
+}
+
+.benefits {
+  display: grid;
+  grid-template-columns: repeat(2, 347px);
+  justify-content: center;
+  gap: 1.2rem;
+  padding-top: 3rem;
+}
+
+.CtaFaq {
+  display: grid;
+  place-items: center;
+  min-height: 100dvh;
+  padding-top: 3.5rem;
+}
+
+.cta_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  max-width: 420px;
+}
+
+.cta_description {
+  font-size: 0.97rem;
+  color: var(--gray-bg-light);
+  text-align: center;
+}
+
+.faq_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 35px;
+  margin: auto;
+  width: 54%;
+  padding-top: 50px;
+}

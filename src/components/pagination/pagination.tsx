@@ -1,29 +1,30 @@
 import "./pagination.css";
 
-import type { typeJob } from "../types/types";
-import { useState } from "react";
-
 type tpJobs = {
-  jobs: typeJob[];
-  onPagination: (value: number) => void;
+  currentPage: number;
+  totalPages: number;
+  setPage: (page: number) => void;
+  nextPage: (totalPages: number) => void;
+  prevPage: () => void;
 };
 
-export function Pagination({ jobs, onPagination }: tpJobs) {
-  const [pgSelected, setPgSelected] = useState(1);
-
+export function Pagination({
+  currentPage,
+  totalPages,
+  setPage,
+  prevPage,
+  nextPage,
+}: tpJobs) {
   let listPagination: number[] = Array.from(
-    { length: Math.ceil(jobs.length / 6) },
+    { length: totalPages },
     (_, i) => i + 1,
   );
 
   return (
     <div className="pagination">
       <button
-        className={`pagination__arrow ${pgSelected <= 1 ? "pagination__arrow--limit" : ""}`}
-        onClick={() => {
-          setPgSelected(pgSelected - 1);
-          onPagination(pgSelected - 1);
-        }}
+        className={`pagination__arrow ${currentPage <= 1 ? "pagination__arrow--limit" : ""}`}
+        onClick={prevPage}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -38,26 +39,24 @@ export function Pagination({ jobs, onPagination }: tpJobs) {
         </svg>
       </button>
       <div className="pagination__number">
-        {listPagination.map((nm) => (
+        {listPagination.map((pgNumber) => (
           <a
             href="#"
-            key={nm}
-            className={`pagination__link ${nm === pgSelected ? "pagination__link--active" : ""}`}
+            key={pgNumber}
+            className={`pagination__link ${pgNumber === currentPage ? "pagination__link--active" : ""}`}
             onClick={(e) => {
               e.preventDefault();
-              onPagination(nm);
-              setPgSelected(nm);
+              setPage(pgNumber);
             }}
           >
-            {nm}
+            {pgNumber}
           </a>
         ))}
       </div>
       <button
-        className={`pagination__arrow ${pgSelected === listPagination.length ? "pagination__arrow--limit" : ""}`}
+        className={`pagination__arrow ${currentPage === listPagination.length ? "pagination__arrow--limit" : ""}`}
         onClick={() => {
-          setPgSelected(pgSelected + 1);
-          onPagination(pgSelected + 1);
+          nextPage(totalPages);
         }}
       >
         <svg

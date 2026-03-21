@@ -1,5 +1,9 @@
 @import "../../styles/utils.css";
 
+:root {
+  --menuBar: url("./icons/menuBar.svg");
+  --menuClose: url("./icons/menuClose.svg");
+}
 .header {
   height: 70px;
   border-bottom: 1px solid var(--bg-slate-900);
@@ -13,16 +17,31 @@
 /*Nav*/
 .nav {
   display: none;
+  position: absolute;
+  z-index: 20;
+  inset: 0;
+  background-color: var(--green-primary-alpha);
+}
+.nav--activated {
+  display: flex;
 }
 .nav__list {
+  position: relative;
+  z-index: 50;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  height: 100%;
   width: 100%;
+  background-color: var(--green-bg-dark);
 }
 .nav__li {
   display: flex;
   align-items: center;
   gap: 3px;
+  width: 100px;
 }
 .nav__link {
   order: 2;
@@ -41,6 +60,7 @@
 .header__logo {
   display: flex;
   align-items: center;
+  color: var(--white);
   gap: 1rem;
 }
 .header__iconLogo {
@@ -56,15 +76,35 @@
   align-items: center;
   gap: 1rem;
 }
-.header_iconBell,
-.header_iconUser {
+.header_labelContent {
+  position: relative;
+}
+.header_iconBell {
+  order: 1;
   width: 40px;
   height: 40px;
-  padding: 9px;
+  padding: 8px;
 }
-.header_iconUser {
-  background-color: var(--green-primary);
-  border-radius: 50%;
+.header__checkBox {
+  position: absolute;
+  opacity: 0;
+}
+.header_iconMenu {
+  position: relative;
+  z-index: 60;
+  order: 2;
+  width: 35px;
+  height: 35px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: all 0.2s ease-in-out;
+}
+.header_iconMenuBar {
+  background-image: var(--menuBar);
+}
+.header_iconMenuClose {
+  background-image: var(--menuClose);
 }
 
 @media (min-width: 930px) {
@@ -73,14 +113,31 @@
   }
   .header__container {
     display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-columns: 280px 2fr 100px;
     gap: 1.5rem;
     justify-items: center;
   }
   /*Nav*/
+  /*Nav*/
   .nav {
     display: flex;
+    position: relative;
     width: 100%;
+    background-color: transparent;
+  }
+  .nav__list {
+    position: relative;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1rem;
+    background-color: var(--green-bg-dark);
+  }
+  .nav__li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    width: 100px;
   }
   .nav__link:hover {
     color: var(--green-primary);
@@ -95,5 +152,8 @@
   /*Icons*/
   .header__icons {
     justify-self: end;
+  }
+  .header_iconMenu {
+    display: none;
   }
 }

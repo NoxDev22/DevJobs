@@ -6,7 +6,7 @@ type props = {
   svg: React.ReactElement;
 };
 
-export function SelectedFilterOption({ text, svg }: props) {
+export function AppliedFilter({ text, svg }: props) {
   return (
     <div className="search__selectedFilter">
       <p>{text}</p>

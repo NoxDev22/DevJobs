@@ -7,21 +7,7 @@
   align-items: center;
   min-height: 130px;
   margin-top: 2.2rem;
-  padding-block: 1.6rem;
-  border-top: 1px solid var(--bg-slate-900);
-}
-.footer .footer__nav {
-  display: flex;
-  justify-content: space-between;
-  list-style: none;
-}
-.footer .footer__nav li {
-  display: grid;
-  justify-items: center;
-  gap: 10px;
-  font-size: 0.9rem;
-  color: var(--gray-bg-light);
-  text-transform: uppercase;
+  padding-block: 1.5rem;
 }
 .footer__links {
   width: 100%;

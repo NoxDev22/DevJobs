@@ -1,31 +1,21 @@
 import "./jobsFound.css";
-import { useState } from "react";
+
 //types
-import { type typeJob } from "../types/types";
+import { type typeOfJob } from "../types/types";
 //components
 import { JobsCard } from "../jobCard/jobsCard";
-import { Pagination } from "../pagination/pagination";
 
 type Props = {
-  resultJobs: typeJob[];
+  resultJobs: typeOfJob[];
+  loading: boolean;
+  total: number;
 };
 
-export function JobsFound({ resultJobs }: Props) {
-  const [limit, setLimit] = useState({ lower: 0, upper: 6 });
-
-  const handleSelectLimit = (value: number) => {
-    setLimit(() => {
-      return {
-        lower: (value - 1) * 6,
-        upper: value * 6,
-      };
-    });
-  };
-
+export function JobsFound({ resultJobs, loading, total }: Props) {
   return (
     <section className="jobs">
       <div className="jobs__texts container">
-        <h2>{resultJobs.length} Jobs Found</h2>
+        <h2>{total} Jobs Found</h2>
         <span className="jobs__recent">
           <p>Recent</p>
           <svg
@@ -42,23 +32,20 @@ export function JobsFound({ resultJobs }: Props) {
         </span>
       </div>
       <section className="jobs__founds container">
-        {resultJobs.slice(limit.lower, limit.upper).map((job) => {
-          return (
-            <JobsCard
-              key={job.id}
-              companyName={job.companyName}
-              positionName={job.positionName}
-              contract={job.contract}
-              salary={job.salary}
-              location={job.location}
-              technologies={job.technologies}
-              isRemote={job.isRemote}
-              posted={job.posted}
-            />
-          );
-        })}
+        {(loading && <p className="text_notFound">Cargando...</p>) ||
+          resultJobs?.map((job) => {
+            return (
+              <JobsCard
+                key={job.id}
+                titulo={job.titulo}
+                empresa={job.empresa}
+                ubicacion={job.ubicacion}
+                data={job.data}
+                descripcion={job.descripcion}
+              />
+            );
+          })}
       </section>
-      <Pagination jobs={resultJobs} onPagination={handleSelectLimit} />
     </section>
   );
 }

@@ -1,0 +1,31 @@
+@import "../../styles/utils.css";
+
+.faq .head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  cursor: pointer;
+}
+
+.faq .head span {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 97%;
+}
+.faq .head svg {
+  transition: transform 0.25s ease-in;
+}
+
+.faq .content {
+  height: 0px;
+  overflow-y: hidden;
+  transition: height 0.25s ease-in;
+  border-bottom: 1px solid #afafaf;
+}
+
+/* Cuando esta activo */
+.faq.active .head svg {
+  transform: rotate(180deg);
+}

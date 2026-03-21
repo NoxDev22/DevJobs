@@ -1,0 +1,37 @@
+@import "../../styles/utils.css";
+
+.benefitCard {
+  max-width: 347px;
+  text-align: center;
+  background-color: var(--green-bg-dark-alpha);
+  padding: 1rem;
+  border: 1px solid var(--green-bg-medium);
+  border-radius: 10px;
+}
+
+.benefitCard svg path {
+  transition: all 0.2s ease-in-out;
+}
+
+.benefitCard_title {
+  font-size: 1.2rem;
+  color: var(--gray-bg-light);
+  padding: 0.8rem;
+  transition: color 0.2s ease-in-out;
+}
+
+.benefitCard_description {
+  font-size: 0.96rem;
+  color: var(--gray-bg-light);
+  line-height: 21px;
+  transition: color 0.2s ease-in-out;
+}
+
+.benefitCard:hover > .benefitCard_title,
+.benefitCard:hover > .benefitCard_description {
+  color: var(--white-soft);
+}
+
+.benefitCard:hover > svg path {
+  fill: var(--white-soft);
+}

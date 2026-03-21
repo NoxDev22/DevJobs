@@ -1,39 +1,33 @@
 //Layouts
 import { Header } from "./layouts/header/header";
-import { Main } from "./layouts/main/main";
 import { Footer } from "./layouts/footer/footer";
-//Components
-import { Hero } from "./components/hero/hero";
-import { Search } from "./components/search/search";
-import { JobsFound } from "./components/jobsFound/jobsFound";
-import { useEffect, useState } from "react";
-//Utils
-import { fetchJobs } from "./services/fetch";
-//types
-import { type typeJob } from "./components/types/types";
+//Pages
+import { Search } from "./pages/Search/Search";
+import { Home } from "./pages/Home/Home";
+import { NotFound } from "./pages/NotFound/NotFound";
+//hooks
+import { useRouter } from "./hooks/useRouter";
+import { useDocumentTitle } from "./hooks/useTitle";
 
 function App() {
-  const [jobs, setJobs] = useState<typeJob[]>([]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const result: typeJob[] = await fetchJobs();
-      setJobs(result);
-    };
-    fetchData();
-  }, []);
+  const { pathName } = useRouter();
+  useDocumentTitle(pathName);
 
   return (
     <>
       <Header />
-      <Main>
-        <Hero />
-        <Search />
-        <JobsFound resultJobs={jobs} />
-      </Main>
+      {pathName === "/" && <Home />}
+      {pathName === "/search" && <Search />}
       <Footer />
     </>
   );
 }
 
 export default App;
+
+/*
+Terminado
+  opciones de limpiar filtro
+  spinner mejorar cuando este cargando
+  usar localStorage para los filtros
+*/
