@@ -7,7 +7,6 @@ export function useRouter() {
     const handlePathName = () => {
       setPathName(window.location.pathname);
     };
-
     window.addEventListener("popstate", handlePathName);
 
     return () => {
@@ -15,7 +14,13 @@ export function useRouter() {
     };
   }, []);
 
+  const navigateTo = (path: string) => {
+    window.history.pushState({}, "", path);
+    window.dispatchEvent(new PopStateEvent("popstate"));
+  };
+
   return {
     pathName,
+    navigateTo,
   };
 }

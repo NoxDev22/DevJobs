@@ -1,7 +1,5 @@
 import "./selectWrapper.css";
 
-import { useId } from "react";
-
 type optionProps = {
   text?: string;
   value: string;
@@ -10,14 +8,19 @@ type optionProps = {
 type props = {
   option: optionProps[];
   name: string;
+  select: string;
 };
 
-export function SelectWrapper({ option, name }: props) {
+export function SelectWrapper({ option, name, select }: props) {
   return (
     <div className="select-wrapper">
       <select className="selectFilter salaryFilter" name={name}>
         {option.map((opt) => (
-          <option key={opt.value} value={opt.value.toLowerCase()}>
+          <option
+            key={opt.value}
+            value={opt.value.toLowerCase()}
+            selected={select === opt.value.toLowerCase() ? true : false}
+          >
             {opt.text ? opt.text : opt.value}
           </option>
         ))}

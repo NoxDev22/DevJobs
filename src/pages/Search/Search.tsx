@@ -1,5 +1,5 @@
 import "./search.css";
-import { useState, useEffect, useId } from "react";
+import { useState, useEffect, useId, useRef } from "react";
 
 //Components
 import { Main } from "../../layouts/main/main";
@@ -10,13 +10,13 @@ import { SelectWrapper } from "../../components/selectWrapper/selectWrapper";
 import { Pagination } from "../../components/pagination/pagination";
 //Icons
 import { Magnifying } from "../../components/svgIcons/magnifying";
-import { AdjustmentIcon } from "../../components/svgIcons/adjustmentIcon";
 
 //types
 import { type typeOfJob } from "../../components/types/types";
 //hooks
 import { useFetchJobs } from "../../services/fetch";
 import { useFilters } from "../../hooks/useFilters";
+import { useRouter } from "../../hooks/useRouter";
 
 export function Search() {
   const [jobs, setJobs] = useState<typeOfJob[]>([]);
@@ -33,24 +33,29 @@ export function Search() {
     prevPage,
     nextPage,
   } = useFilters();
+  const { navigateTo } = useRouter();
 
   //id
   const idTextToFilter = useId();
   const idExperience = useId();
   const idTechnology = useId();
   const idLocation = useId();
+  //Ref
+  let timeOutId = useRef<number | null>(null);
 
+  //Pagination Variables
   const resultPerPage = "9";
   const totalPages = Math.ceil(total / Number(resultPerPage));
+  const filtersStorage = window.localStorage.getItem("jobFilters");
 
   useEffect(() => {
-    setPage(1);
-    console.log("render primer effect");
+    const jobCurrentPage = window.localStorage.getItem("jobCurrentPage");
+    const newCurrentPage = jobCurrentPage ? Number(jobCurrentPage) : 1;
+    setPage(newCurrentPage);
   }, [textToFilter, filters.experience, filters.location, filters.technology]);
 
   useEffect(() => {
     const params = new URLSearchParams();
-    console.log("render segundo effect");
     if (textToFilter) params.append("text", textToFilter);
     if (filters.experience) params.append("level", filters.experience);
     if (filters.location) params.append("type", filters.location);
@@ -82,15 +87,46 @@ export function Search() {
     filters.technology,
     currentPage,
   ]);
-  console.log(currentPage);
+
+  useEffect(() => {
+    const params = new URLSearchParams();
+    if (textToFilter) params.append("text", textToFilter);
+    if (filters.experience) params.append("level", filters.experience);
+    if (filters.technology) params.append("technology", filters.technology);
+    if (filters.location) params.append("type", filters.location);
+    if (currentPage > 1) params.append("page", currentPage.toString());
+
+    const newUrl = params.toString()
+      ? `${window.location.pathname}?${params.toString()}`
+      : window.location.pathname;
+
+    navigateTo(newUrl);
+  }, [
+    textToFilter,
+    filters.experience,
+    filters.location,
+    filters.technology,
+    currentPage,
+  ]);
+
   const handleSearch = (e: React.ChangeEvent<HTMLFormElement>) => {
     const form = new window.FormData(e.currentTarget);
-    setTextToFilter(form.get(idTextToFilter)?.toString() ?? "");
-    setFilters({
+
+    if (timeOutId.current) {
+      clearTimeout(timeOutId.current);
+    }
+    timeOutId.current = setTimeout(() => {
+      setTextToFilter(form.get(idTextToFilter)?.toString() ?? "");
+    }, 550);
+
+    const formFilters = {
       technology: form.get(idTechnology)?.toString() ?? "",
       experience: form.get(idExperience)?.toString() ?? "",
       location: form.get(idLocation)?.toString() ?? "",
-    });
+    };
+
+    setFilters(formFilters);
+    window.localStorage.setItem("jobFilters", JSON.stringify(formFilters));
   };
 
   return (
@@ -102,18 +138,21 @@ export function Search() {
             <div className="search__seeker">
               <input
                 type="text"
+                defaultValue={textToFilter}
                 placeholder="Senior Backend"
                 className="search__input"
                 name={idTextToFilter}
               />
               <Magnifying className="search__iconMagnifying" />
             </div>
-            <div className="search__filter">
-              <AdjustmentIcon className="search__iconAdjustment" />
-            </div>
           </div>
           <div className="search__selectWrapperContainer">
             <SelectWrapper
+              select={
+                filtersStorage
+                  ? JSON.parse(filtersStorage).technology.toString()
+                  : ""
+              }
               name={idTechnology}
               option={[
                 { value: "", text: "Technologies" },
@@ -125,6 +164,11 @@ export function Search() {
               ]}
             />
             <SelectWrapper
+              select={
+                filtersStorage
+                  ? JSON.parse(filtersStorage).location.toString()
+                  : ""
+              }
               name={idLocation}
               option={[
                 { value: "", text: "Location" },
@@ -133,6 +177,11 @@ export function Search() {
               ]}
             />
             <SelectWrapper
+              select={
+                filtersStorage
+                  ? JSON.parse(filtersStorage).experience.toString()
+                  : ""
+              }
               name={idExperience}
               option={[
                 { value: "", text: "Experience" },
@@ -144,7 +193,12 @@ export function Search() {
           </div>
         </form>
       </section>
-      <AppliedFiltersContainer />
+      <AppliedFiltersContainer
+        setFilter={setFilters}
+        setTextToFilter={setTextToFilter}
+        filter={filters}
+        text={textToFilter}
+      />
       <JobsFound resultJobs={jobs} loading={loading} total={total} />
       <Pagination
         currentPage={currentPage}

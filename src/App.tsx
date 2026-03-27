@@ -27,7 +27,5 @@ export default App;
 
 /*
 Terminado
-  opciones de limpiar filtro
-  spinner mejorar cuando este cargando
-  usar localStorage para los filtros
+  maquetar pagina de mas informacion acerca del trabajo
 */

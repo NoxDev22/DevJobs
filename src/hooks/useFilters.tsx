@@ -1,26 +1,42 @@
-import { useState } from "react";
+import React, { useState } from "react";
 
 export function useFilters() {
-  const [textToFilter, setTextToFilter] = useState("");
-  const [filters, setFilters] = useState({
-    technology: "",
-    experience: "",
-    location: "",
+  const [textToFilter, setTextToFilter] = useState(() => {
+    const params = new URLSearchParams(window.location.search);
+    return params.get("text") || "";
   });
-  const [currentPage, setCurrentPage] = useState(1);
+  const [filters, setFilters] = useState(() => {
+    const jobFilters = window.localStorage.getItem("jobFilters");
+    return jobFilters
+      ? JSON.parse(jobFilters)
+      : {
+          technology: "",
+          experience: "",
+          location: "",
+        };
+  });
+  const [currentPage, setCurrentPage] = useState(() => {
+    const jobCurrentPage = window.localStorage.getItem("jobCurrentPage");
+    return jobCurrentPage ? Number(jobCurrentPage) : 1;
+  });
 
   const nextPage = (totalPages: number) => {
     if (currentPage < totalPages) {
-      setCurrentPage(currentPage + 1);
+      const newCurrentPage = currentPage + 1;
+      setCurrentPage(newCurrentPage);
+      window.localStorage.setItem("jobCurrentPage", newCurrentPage.toString());
     }
   };
   const prevPage = () => {
     if (currentPage > 1) {
-      setCurrentPage(currentPage - 1);
+      const newCurrentPage = currentPage - 1;
+      setCurrentPage(newCurrentPage);
+      window.localStorage.setItem("jobCurrentPage", newCurrentPage.toString());
     }
   };
   const setPage = (page: number) => {
     setCurrentPage(page);
+    window.localStorage.setItem("jobCurrentPage", page.toString());
   };
 
   return {

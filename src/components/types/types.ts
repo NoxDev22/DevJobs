@@ -31,10 +31,7 @@ export interface typeOfResult {
 }
 
 export interface typeFilter {
-  contract: string;
-  salary: string;
-  area: string;
+  experience: string;
   location: string;
-  tech: string;
-  remote: boolean;
+  technology: string;
 }

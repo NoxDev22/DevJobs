@@ -32,8 +32,19 @@
   gap: 1.15rem;
   padding-top: 2rem;
 }
-.text_notFound {
+
+.jobs__spinner {
+  grid-column: 2/3;
+}
+.jobs_textLoading {
   text-align: center;
+  color: var(--green-primary);
+}
+.jobs_textNotFound {
+  font-size: 1.2rem;
+  text-align: center;
+  color: var(--green-primary);
+  grid-column: 2/3;
 }
 
 .jobs__txtMore {

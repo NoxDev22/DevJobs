@@ -1,9 +1,35 @@
+@import "../../styles/utils.css";
 /*Results Filter*/
 .appliedFiltersContainer {
+  padding-top: 3rem;
+}
+
+.appliedFiltersContainer__texts {
+  display: grid;
+  grid-template-columns: repeat(4, 290px);
+  max-width: 350px;
+  padding-bottom: 1.1rem;
+}
+
+.appliedFiltersContainer__texts button {
+  grid-column: 2;
+  width: fit-content;
+  font-size: 1rem;
+  color: var(--gray-bg-light);
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid transparent;
+  transition: all.2s ease-in-out;
+}
+.appliedFiltersContainer__texts button:hover {
+  color: var(--white);
+  border-bottom-color: var(--green-bg-medium);
+  cursor: pointer;
+}
+.appliedFilterContainer__filters {
   display: grid;
   gap: 1rem;
   grid-template-columns: repeat(auto-fit, minmax(140px, 150px));
   justify-content: center;
   width: 100%;
-  margin-top: 4.5rem;
 }
