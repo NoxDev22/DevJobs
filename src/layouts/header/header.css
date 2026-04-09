@@ -5,7 +5,13 @@
   --menuClose: url("./icons/menuClose.svg");
 }
 .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 90;
   height: 70px;
+  background-color: var(--green-bg-dark);
   border-bottom: 1px solid var(--bg-slate-900);
 }
 .header__container {
@@ -48,6 +54,12 @@
   font-size: 0.94rem;
   color: var(--gray-bg-light);
   transition: color 0.2s ease-in-out;
+}
+.nav__link.active {
+  color: var(--green-primary);
+}
+.nav__link.active ~ .nav__icon path {
+  fill: var(--green-primary);
 }
 .nav__icon {
   width: 28px;

@@ -39,6 +39,9 @@
     transform: scale(0.99);
   }
 }
+.home_btnDiscover path {
+  fill: var(--green-bg-dark);
+}
 
 .benefits {
   display: grid;

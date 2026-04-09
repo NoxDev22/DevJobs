@@ -1,4 +1,5 @@
 import "./selectWrapper.css";
+import { useSearchParams } from "react-router";
 
 type optionProps = {
   text?: string;
@@ -8,10 +9,12 @@ type optionProps = {
 type props = {
   option: optionProps[];
   name: string;
-  select: string;
+  url: string;
 };
 
-export function SelectWrapper({ option, name, select }: props) {
+export function SelectWrapper({ option, name, url }: props) {
+  const [searchParam] = useSearchParams();
+  const select = searchParam.get(url);
   return (
     <div className="select-wrapper">
       <select className="selectFilter salaryFilter" name={name}>

@@ -1,10 +1,10 @@
 import "./jobsFound.css";
-import { SpinnerCircularSplit } from "spinners-react";
 
 //types
-import { type typeOfJob } from "../types/types";
+import { type typeOfJob } from "../../types/types";
 //components
 import { JobsCard } from "../jobCard/jobsCard";
+import { Spinner } from "../spinner/spinner";
 
 type Props = {
   resultJobs: typeOfJob[];
@@ -34,16 +34,7 @@ export function JobsFound({ resultJobs, loading, total }: Props) {
       </div>
       <section className="jobs__founds container">
         {loading ? (
-          <div className="jobs__spinner">
-            <SpinnerCircularSplit
-              size={90}
-              thickness={100}
-              speed={100}
-              color="#13ec92"
-              secondaryColor="rgba(0, 0, 0, 0.44)"
-            />
-            <p className="jobs_textLoading">Cargando...</p>
-          </div>
+          <Spinner className={"jobs__spinner"} />
         ) : resultJobs.length === 0 ? (
           <p className="jobs_textNotFound">
             No se encontraron resultados para su búsqueda
@@ -52,6 +43,7 @@ export function JobsFound({ resultJobs, loading, total }: Props) {
           resultJobs.map((job) => (
             <JobsCard
               key={job.id}
+              id={job.id}
               titulo={job.titulo}
               empresa={job.empresa}
               ubicacion={job.ubicacion}

@@ -1,7 +1,10 @@
 import { useState } from "react";
 import "./header.css";
-
+//React router
 import { Link } from "../../components/Link/link";
+//Components
+import { DiscoverIcon } from "../../components/svgIcons/discoverIcon";
+import { HomeIcon } from "../../components/svgIcons/homeIcon";
 
 export function Header() {
   const [activated, setActivated] = useState(false);
@@ -30,40 +33,19 @@ export function Header() {
             <h2 className="header__textLogo">TechJobs</h2>
           </>
         </Link>
-
         <nav className={`nav ${activated ? "nav--activated" : ""}`}>
           <ul className="nav__list">
             <li className="nav__li">
               <Link href="/" className="nav__link">
                 Home
               </Link>
-
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="30"
-                height="30"
-                viewBox="0 0 24 24"
-                className="nav__icon"
-              >
-                <path fill="#8a9394" d="M10 20v-6h4v6h5v-8h3L12 3L2 12h3v8z" />
-              </svg>
+              <HomeIcon className="nav__icon" width="30" height="30" />
             </li>
             <li className="nav__li">
               <Link href="/discover" className="nav__link">
                 Discover
               </Link>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="32"
-                height="32"
-                viewBox="0 0 24 24"
-                className="nav__icon"
-              >
-                <path
-                  fill="#8a9394"
-                  d="m7.5 16.5l7-2l2-7l-7 2zm4.5-3q-.625 0-1.062-.437T10.5 12t.438-1.062T12 10.5t1.063.438T13.5 12t-.437 1.063T12 13.5m0 8.5q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22"
-                />
-              </svg>
+              <DiscoverIcon className="nav__icon" width="32" height="32" />
             </li>
             <li className="nav__li">
               <Link href="/saved" className="nav__link">

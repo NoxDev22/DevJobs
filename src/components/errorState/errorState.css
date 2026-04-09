@@ -1,0 +1,35 @@
+@import "../../styles/utils.css";
+
+.errorState {
+  display: grid;
+  gap: 0.7rem;
+  justify-items: center;
+  max-width: 480px;
+  text-align: center;
+}
+
+.errorState__message {
+  color: var(--gray-bg-light);
+}
+
+.errorState__buttons {
+  display: flex;
+  gap: 1rem;
+  padding-top: 1rem;
+}
+.errorState__button {
+  width: 155px;
+  height: 43px;
+  font-size: 0.98rem;
+  font-weight: 700;
+  background-color: var(--green-primary);
+  border: none;
+  border-radius: 7px;
+  transition: all 0.4s ease-in-out;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(0.97);
+    text-decoration: underline;
+  }
+}

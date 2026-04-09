@@ -1,0 +1,15 @@
+@import "./jobDetailSection.css";
+
+.jobDetail__Section {
+  padding-top: 1.7rem;
+  justify-self: start;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.jobDetail__Section p {
+  max-width: 600px;
+  color: var(--gray-bg-light);
+  line-height: 28px;
+}

@@ -5,6 +5,7 @@ interface typeDataJob {
 }
 
 export interface typeOfCard {
+  id: string;
   titulo: string;
   empresa: string;
   ubicacion: string;
@@ -13,7 +14,6 @@ export interface typeOfCard {
 }
 
 export interface typeOfJob extends typeOfCard {
-  id: string;
   content: {
     about: string;
     description: string;

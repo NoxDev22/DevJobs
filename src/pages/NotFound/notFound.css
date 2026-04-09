@@ -4,7 +4,7 @@
   display: grid;
   place-content: center;
   grid-template-rows: 250px 140px;
-  height: calc(100dvh - 65px);
+  height: 100dvh;
 }
 
 .notFound_illustration {

@@ -1,6 +1,12 @@
+//Components
+import { Link } from "react-router";
+//Hooks
+import { useDocumentTitle } from "../../hooks/useTitle";
+
 import "./notFound.css";
 
-export function NotFound() {
+export default function NotFound() {
+  useDocumentTitle(window.location.pathname);
   return (
     <section className="container notFound">
       <figure className="notFound_illustration">
@@ -15,9 +21,9 @@ export function NotFound() {
         <p className="notFound_description">
           The requested page could not be found.
         </p>
-        <a href="/" className="notFound_btnBackToHome">
+        <Link to="/" className="notFound_btnBackToHome">
           Back to home
-        </a>
+        </Link>
       </div>
     </section>
   );

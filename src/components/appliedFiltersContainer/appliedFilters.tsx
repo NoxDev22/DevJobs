@@ -9,7 +9,7 @@ import { LocationIcon } from "../../components/svgIcons/locationIcon";
 import { TechnologiesIcon } from "../../components/svgIcons/technologiesIcon";
 import { ContractIcon } from "../../components/svgIcons/contractIcon";
 //types
-import { type typeFilter } from "../types/types";
+import { type typeFilter } from "../../types/types";
 type props = {
   filter: typeFilter;
   text: string;
@@ -27,7 +27,6 @@ export function AppliedFiltersContainer({
       document.querySelectorAll<HTMLSelectElement>(".selectFilter");
     const inputText =
       document.querySelector<HTMLInputElement>(".search__input");
-
     setTextToFilter("");
     setFilter({
       technology: "",

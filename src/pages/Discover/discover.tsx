@@ -1,4 +1,4 @@
-import "./search.css";
+import "./discover.css";
 import { useState, useEffect, useId, useRef } from "react";
 
 //Components
@@ -10,18 +10,22 @@ import { SelectWrapper } from "../../components/selectWrapper/selectWrapper";
 import { Pagination } from "../../components/pagination/pagination";
 //Icons
 import { Magnifying } from "../../components/svgIcons/magnifying";
-
 //types
-import { type typeOfJob } from "../../components/types/types";
+import { type typeOfJob } from "../../types/types";
 //hooks
 import { useFetchJobs } from "../../services/fetch";
 import { useFilters } from "../../hooks/useFilters";
 import { useRouter } from "../../hooks/useRouter";
+import { useDocumentTitle } from "../../hooks/useTitle";
 
-export function Search() {
+export default function Discover() {
+  //Get title
+  useDocumentTitle(window.location.pathname);
+  //Data obtained from the API
   const [jobs, setJobs] = useState<typeOfJob[]>([]);
-  const [loading, setLoading] = useState(true);
   const [total, setTotal] = useState(0);
+  //State of loading
+  const [loading, setLoading] = useState(true);
   //Hooks
   const {
     filters,
@@ -46,12 +50,9 @@ export function Search() {
   //Pagination Variables
   const resultPerPage = "9";
   const totalPages = Math.ceil(total / Number(resultPerPage));
-  const filtersStorage = window.localStorage.getItem("jobFilters");
 
   useEffect(() => {
-    const jobCurrentPage = window.localStorage.getItem("jobCurrentPage");
-    const newCurrentPage = jobCurrentPage ? Number(jobCurrentPage) : 1;
-    setPage(newCurrentPage);
+    setPage(1);
   }, [textToFilter, filters.experience, filters.location, filters.technology]);
 
   useEffect(() => {
@@ -99,7 +100,6 @@ export function Search() {
     const newUrl = params.toString()
       ? `${window.location.pathname}?${params.toString()}`
       : window.location.pathname;
-
     navigateTo(newUrl);
   }, [
     textToFilter,
@@ -111,7 +111,6 @@ export function Search() {
 
   const handleSearch = (e: React.ChangeEvent<HTMLFormElement>) => {
     const form = new window.FormData(e.currentTarget);
-
     if (timeOutId.current) {
       clearTimeout(timeOutId.current);
     }
@@ -126,7 +125,6 @@ export function Search() {
     };
 
     setFilters(formFilters);
-    window.localStorage.setItem("jobFilters", JSON.stringify(formFilters));
   };
 
   return (
@@ -148,11 +146,7 @@ export function Search() {
           </div>
           <div className="search__selectWrapperContainer">
             <SelectWrapper
-              select={
-                filtersStorage
-                  ? JSON.parse(filtersStorage).technology.toString()
-                  : ""
-              }
+              url="technology"
               name={idTechnology}
               option={[
                 { value: "", text: "Technologies" },
@@ -164,11 +158,7 @@ export function Search() {
               ]}
             />
             <SelectWrapper
-              select={
-                filtersStorage
-                  ? JSON.parse(filtersStorage).location.toString()
-                  : ""
-              }
+              url="type"
               name={idLocation}
               option={[
                 { value: "", text: "Location" },
@@ -177,11 +167,7 @@ export function Search() {
               ]}
             />
             <SelectWrapper
-              select={
-                filtersStorage
-                  ? JSON.parse(filtersStorage).experience.toString()
-                  : ""
-              }
+              url="level"
               name={idExperience}
               option={[
                 { value: "", text: "Experience" },

@@ -6,12 +6,14 @@ import { Hero } from "../../components/hero/hero";
 import { BenefitsCard } from "../../components/benefitsCard/benefitsCard";
 import { Faq } from "../../components/faq/faq";
 //Icon
-import { Launch } from "../../components/svgIcons/launchIcon";
+import { DiscoverIcon } from "../../components/svgIcons/discoverIcon";
 import { Link } from "../../components/Link/link";
-//
+//Hooks
+import { useDocumentTitle } from "../../hooks/useTitle";
 type Props = {};
 
-export function Home({}: Props) {
+export default function Home({}: Props) {
+  useDocumentTitle(window.location.pathname);
   return (
     <Main>
       <Hero />
@@ -25,8 +27,9 @@ export function Home({}: Props) {
             your next job simple, fast, and focused on what really matters: your
             skills.
           </p>
-          <Link href="/search" className="home_whyButton">
-            <Launch /> Search for work
+          <Link href="/discover" className="home_whyButton">
+            <DiscoverIcon className="home_btnDiscover" width="32" height="32" />{" "}
+            Search for work
           </Link>
         </div>
       </section>
@@ -113,8 +116,9 @@ export function Home({}: Props) {
             Explore hundreds of opportunities for developers and find the role
             that best suits your profile.
           </p>
-          <Link href="/search" className="home_whyButton">
-            <Launch /> Search for work
+          <Link href="/discover" className="home_whyButton">
+            <DiscoverIcon className="home_btnDiscover" width="32" height="32" />{" "}
+            Search for work
           </Link>
         </div>
         <div className="faq_container">

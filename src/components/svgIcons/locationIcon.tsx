@@ -1,13 +1,15 @@
 type prop = {
   value: string;
+  width?: string;
+  height?: string;
 };
 
-export function LocationIcon({ value }: prop) {
+export function LocationIcon({ value, width, height }: prop) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="32"
-      height="32"
+      width={`${width ? width : "32"}`}
+      height={`${height ? height : "32"}`}
       viewBox="0 0 24 24"
     >
       <path

@@ -2,7 +2,7 @@
 
 /**Hero*/
 .hero {
-  height: calc(100dvh - 70px);
+  height: 100dvh;
   background-image:
     linear-gradient(#10221abb, #10221abb), url("./images/hero-image.jpg");
   background-position: center;

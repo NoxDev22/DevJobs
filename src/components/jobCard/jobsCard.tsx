@@ -1,14 +1,24 @@
+import { useNavigate } from "react-router";
 import "./jobsCard.css";
 //types
-import { type typeOfCard } from "../types/types";
+import { type typeOfCard } from "../../types/types";
+//Components
+import { Button } from "../button/button";
+import { Launch } from "../svgIcons/launchIcon";
+import { InformationIcon } from "../svgIcons/informationIcon";
 
 export function JobsCard({
+  id,
   titulo,
   empresa,
   ubicacion,
   descripcion,
   data,
 }: typeOfCard) {
+  const navigate = useNavigate();
+  const handleMoreInfo = () => {
+    navigate(id);
+  };
   return (
     <article className="jobs__card">
       <div className="jobs__header">
@@ -54,8 +64,16 @@ export function JobsCard({
         </span>
       </div>
       <div className="jobs_buttons">
-        <button className="jobs__button">More Info.</button>
-        <button className="jobs__button">Apply Now</button>
+        <Button
+          className="jobs__button"
+          text="More Info"
+          handleClick={handleMoreInfo}
+        >
+          <InformationIcon className="" width="28" height="28" />
+        </Button>
+        <Button className="jobs__button" text="Apply Now">
+          <Launch width="25" height="25" />
+        </Button>
       </div>
     </article>
   );

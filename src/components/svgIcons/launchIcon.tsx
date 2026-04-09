@@ -1,9 +1,14 @@
-export function Launch() {
+type props = {
+  width: string;
+  height: string;
+};
+
+export function Launch({ width, height }: props) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="27"
-      height="27"
+      width={width}
+      height={height}
       viewBox="0 0 24 24"
     >
       <path
